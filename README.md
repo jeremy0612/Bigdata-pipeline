@@ -15,9 +15,9 @@ Before run the docker-compose, we need to build the image for mongodb and airflo
 ```bash
 ├── `image`
 │   ├── `airflow_service`
-|   |   ├── `Dockerfile`
-|   ├── `mongo_service`
-|   |   ├── `Dockerfile`
+│   │   ├── `Dockerfile`
+│   ├── `mongo_service`
+│   │   ├── `Dockerfile`
 ```
 
 The .yml file describe all necessary elements of the system. To run within flower monitor, use the following command
@@ -31,6 +31,8 @@ docker-compose --profile flower -f docker-compose-env.yml up -d
 In order to switch on/off a single service (flower for example) in the compose, we could use the following command.
 
 ```bash
+# Delete a service
 docker-compose rm -s -v yourService
+# Open a service
 docker-compose -f docker-compose-env.yml up -d yourService
 ```
