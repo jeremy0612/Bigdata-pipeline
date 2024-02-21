@@ -11,6 +11,7 @@ Since the sample project was built based on docker-compose, there is nothing to 
 * At least 6GB of memory allocated for Docker. 
 ### Setup environment
 Before run the docker-compose, we need to build the image for mongodb and airflow worker, the Dockerfile for each image is in the ./image directory with the structure below.
+
 '''bash
 ├── `image`
 │   ├── `airflow_service`
@@ -18,12 +19,17 @@ Before run the docker-compose, we need to build the image for mongodb and airflo
 |   ├── `mongo_service`
 |   |   ├── `Dockerfile`
 '''
+
 The .yml file describe all necessary elements of the system. To run within flower monitor, use the following command
+
 '''bash
 docker-compose --profile flower -f docker-compose-env.yml up -d
 '''
+
 ### Adjust single service
+
 In order to switch on/off a single service (flower for example) in the compose, we could use the following command.
+
 '''bash
 docker-compose rm -s -v yourService
 docker-compose -f docker-compose-env.yml up -d yourService
