@@ -4,7 +4,7 @@
 ### Introduction
 
 A project presents the a data flow in practise. This sample use apache spark as a processing framework for big data and apache airflow for triggering the jobs. The repo contains DAG (pipeline graph) , pyspark script and docker components for the quickest setup environment.
-![!\[alt text\](flower_branch2.jpg)](snapshot/flower_branch2.jpg)
+![alt text](snapshot/dag.jpg)
 ### Requirements
 Since the sample project was built based on docker-compose, there is nothing to install except Docker.
 * Docker engine/desktop installed.
@@ -36,3 +36,13 @@ docker-compose rm -s -v yourService
 # Open a service
 docker-compose -f docker-compose-env.yml up -d yourService
 ```
+
+### Monitoring 
+Access the web dashboard for observing the data flow & status.
+**Flower url**
+    `localhost:5555/dashboard`
+**Airflow url** 
+    `localhost:8080`
+We could use flower to monitor the workers, tasks and processes handled by each executor. Meanwhile, the airflow provide the WebUI dashboard to control the data pipeline. Once the respective url opened, we will see the similar UI below. The port could be edited in .yml file.
+![!\[alt text\](flower_branch2.jpg)](snapshot/flower_branch2.jpg)
+![alt text](snapshot/gant_chart_branch1.jpg)
