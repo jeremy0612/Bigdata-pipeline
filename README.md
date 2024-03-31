@@ -25,6 +25,10 @@ The .yml file describe all necessary elements of the system. To run within flowe
 ```bash
 docker-compose --profile flower -f docker-compose-env.yml up -d
 ```
+Create spark connection in airflow for communication between airflow and spark
+```
+coming soon
+```
 
 ### Adjust single service
 
